@@ -29,6 +29,11 @@ namespace UI.Grape
             }
         }
 
+        public void AddChild(IGrape grape)
+        {
+            this.childList.Add(grape);
+        }
+
         public void SetPrivateLock(bool value)
         {
             this.pLock = value;
@@ -44,9 +49,5 @@ namespace UI.Grape
 
         protected virtual void DoDestory() { }
 
-        private void OnDestroy()
-        {
-            this.Destory();
-        }
     }
 }

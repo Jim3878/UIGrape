@@ -8,7 +8,7 @@ namespace UI.Grape
 {
     
 
-    public class ColorStateHandle : BaseStateHandle
+    public class ColorStateHandle : MonoBehaviour
     {
         private Image image;
         public Color normal=new Color(1,1,1),
@@ -16,16 +16,13 @@ namespace UI.Grape
                     press = new Color(1, 1, 1),
                     disable = new Color(1, 1, 1);
 
-        public override void Init()
+        public  void Init()
         {
             image = GetComponent<Image>();
         }
         
-        public override void Destory()
-        {
-        }
 
-        public override void AsyncState(BtnState state)
+        public void AsyncState(BtnState state)
         {
             if (IsState(BtnState.DISABLE, state))
             {

@@ -14,11 +14,11 @@ namespace UI.Grape
         PRESS = 0x02,
         DISABLE = 0x04,
     }
-
-    [RequireComponent(typeof(MouseTrigger))]
+    
     public abstract class BaseButton : BaseUI
     {
         protected BtnState _state;
+        public EventHandler onTrigger;
         public BtnState State { get { return _state; } }
 
         protected void PushState(BtnState state)
